@@ -48,7 +48,7 @@ export default function SubcategoriesScreen({ categoryId, parentId, path }) {
 
   const handlePress = useCallback(
     (id) => {
-      const params = new URLSearchParams({ parentId: categoryId });
+      const params = new URLSearchParams({ parentId: parentId });
       router.navigate(`${path}/list/${id}?${params.toString()}`);
     },
     [categoryId, path]

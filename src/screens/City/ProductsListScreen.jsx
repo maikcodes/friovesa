@@ -2,7 +2,7 @@ import { API } from "../../constants/wordpress";
 import { APP_COLORS } from "../../constants/colors";
 import {
   CategoriesScrollableMenu,
-  SubCategoriesScrollableMenuSkeleton,
+  CategoriesScrollableMenuSkeleton,
 } from "../../components/Categories";
 import {
   CustomSafeAreaView,
@@ -48,7 +48,7 @@ export default function ProductsListScreen({ categoryId, parentId }) {
     return (
       <CustomSafeAreaView>
         <View>
-          <SubCategoriesScrollableMenuSkeleton />
+          <CategoriesScrollableMenuSkeleton />
         </View>
 
         <ProductsListSkeleton />
