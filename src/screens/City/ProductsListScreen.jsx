@@ -12,7 +12,7 @@ import {
 } from "../../components";
 import { FlatList, RefreshControl, View } from "react-native";
 import { ProductCard, ProductsListSkeleton } from "../../components/Products";
-import { useLocalSearchParams, usePathname } from "expo-router";
+import { usePathname } from "expo-router";
 import { useState } from "react";
 import lang from "../../lang/es";
 import useProducts from "../../hooks/useProducts";
@@ -26,16 +26,10 @@ export default function ProductsListScreen({ categoryId, parentId }) {
       orderBy: "include",
     });
   const pathname = usePathname();
-  const { goBack } = useLocalSearchParams();
 
   const getProductsCityPath = () => {
     const pathArray = pathname.split("/");
-
-    if (goBack) {
-      return [pathArray[1], "subcategory"].join("/");
-    }
-
-    return pathArray.slice(0, 3).join("/");
+    return [pathArray[1], "subcategory"].join("/");
   };
 
   const handleRefresh = async () => {
