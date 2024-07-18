@@ -1,5 +1,5 @@
 import { AUTH_TOKEN_KEY, USER_KEYS } from "../constants/secureStoreKeys";
-import { SecureStore } from "../services/SecureStore";
+import { SecureStore } from "../lib/SecureStore";
 
 export class UserDataManager {
   /**
