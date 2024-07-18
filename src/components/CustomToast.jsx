@@ -8,7 +8,7 @@ const toastConfig = {
       style={{
         backgroundColor: APP_COLORS.secondary,
         borderLeftColor: APP_COLORS.secondary,
-        height: 80,
+        height: 90,
       }}
       text1Style={{
         fontSize: 16,
@@ -30,7 +30,7 @@ const toastConfig = {
       style={{
         backgroundColor: APP_COLORS.outOfStock,
         borderLeftColor: APP_COLORS.outOfStock,
-        height: 80,
+        height: 90,
       }}
       text1Style={{
         fontSize: 16,

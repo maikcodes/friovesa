@@ -199,4 +199,9 @@ export default {
   paymentMethod: "Método de pago",
   shippingMethod: "Método de envío",
   totalTax: "Impuesto total",
+  order: "Pedido",
+  date: "Fecha",
+  time: "Hora",
+  state: "Estado",
+  tax: "Impuesto",
 };

@@ -1,6 +1,9 @@
+import { APP_COLORS } from "../../constants/colors";
+import { clockIcon, dateIcon } from "../../constants/icons";
 import { router } from "expo-router";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import Card from "../Card";
+import lang from "../../lang/es";
 import useOderHistory from "../.../../../hooks/useOrderHistory";
 
 export default function OrderCard({ order }) {
@@ -8,7 +11,10 @@ export default function OrderCard({ order }) {
 
   const { address, country, id, status, dateCreated, total, totalTax } = order;
   const date = new Date(dateCreated).toLocaleDateString("es-ec");
-  const time = new Date(dateCreated).toLocaleTimeString("es-ec");
+  const time = new Date(dateCreated).toLocaleTimeString("es-ec", {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
   const firstProductName = order?.products[0]?.name;
   const imageUrl = order?.products[0]?.imageUrl;
   const totalProducts = order?.products.length;
@@ -19,84 +25,105 @@ export default function OrderCard({ order }) {
   };
 
   return (
-    <Card additionalStyles="p-3">
-      <TouchableOpacity className="space-y-2" onPress={handleSelectOrder}>
-        <View className="flex flex-row justify-between">
-          <View className="w-3/12 h-20 ">
-            <Image
-              source={{ uri: imageUrl }}
-              className="h-full w-full object-cover"
-            />
-          </View>
+    <Card>
+      <TouchableOpacity className="p-3" onPress={handleSelectOrder}>
+        <View className="space-y-2">
+          <View className="flex flex-row">
+            <View className="w-3/12 h-20">
+              <Image
+                source={{ uri: imageUrl }}
+                className="h-full w-full object-cover"
+              />
+            </View>
 
-          <View className="w-8/12 flex flex-col space-y-5">
-            <View className="flex flex-col space-y-1">
+            <View className="w-9/12 flex flex-col space-y-5 pl-4">
               <View>
                 <Text className="text-base font-bold text-primary">
                   {firstProductName}
                 </Text>
-              </View>
 
-              <View className="w-7/12 ">
                 <Text>
                   {address} | {country}
                 </Text>
               </View>
-            </View>
 
-            <View className="flex flex-row">
-              <View className="w-6/12 pr-1">
-                <Text className="capitalize">Fecha: {date}</Text>
-                <Text className="capitalize">Hora: {time}</Text>
+              <View className="flex flex-row">
+                <View className="w-5/12 pt-1">
+                  <View className="flex flex-row items-center">
+                    <View className="w-4 h-4">
+                      <Image
+                        source={dateIcon}
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                        }}
+                        tintColor={APP_COLORS.copyDarkLighter}
+                      />
+                    </View>
+
+                    <View className="pl-1">
+                      <Text className="capitalize">{date}</Text>
+                    </View>
+                  </View>
+
+                  <View className="flex flex-row items-center">
+                    <View className="w-4 h-4">
+                      <Image
+                        source={clockIcon}
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                        }}
+                        tintColor={APP_COLORS.copyDarkLighter}
+                      />
+                    </View>
+
+                    <View className="pl-1">
+                      <Text className="capitalize">{time}</Text>
+                    </View>
+                  </View>
+                </View>
+
+                <View className="w-7/12 pl-1 items-end ">
+                  <Text className="text-base font-bold text-end"># {id}</Text>
+
+                  <Text className="px-2 rounded-lg bg-primary text-foreground">
+                    {status}
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+
+          <View className="bg-gray-100 flex flex-row justify-between p-1 rounded-md">
+            <View className="w-4/12 flex flex-col space-y-2">
+              <View className="mx-auto">
+                <Text className="font-bold">{lang?.total}</Text>
               </View>
 
-              <View className="w-6/12 pl-1 items-end">
-                <Text className="text-end">Pedido</Text>
-
-                <Text className="text-base font-bold text-end"># {id}</Text>
+              <View className="mx-auto">
+                <Text>{total}</Text>
               </View>
             </View>
-          </View>
-        </View>
 
-        <View className="bg-gray-100 flex flex-row justify-between p-1 rounded-md">
-          <View className="w-3/12 flex flex-col space-y-2">
-            <View className="mx-auto">
-              <Text className="font-bold">Total</Text>
+            <View className="w-4/12 flex flex-col space-y-2">
+              <View className="mx-auto">
+                <Text className="font-bold">{lang?.tax}</Text>
+              </View>
+
+              <View className="mx-auto">
+                <Text>{totalTax}</Text>
+              </View>
             </View>
 
-            <View className="mx-auto">
-              <Text>{total}</Text>
-            </View>
-          </View>
+            <View className="w-4/12 flex flex-col space-y-2">
+              <View className="mx-auto">
+                <Text className="font-bold">{lang?.quantity}</Text>
+              </View>
 
-          <View className="w-2/12 flex flex-col space-y-2">
-            <View className="mx-auto">
-              <Text className="font-bold">Impuesto</Text>
-            </View>
-
-            <View className="mx-auto">
-              <Text>{totalTax}</Text>
-            </View>
-          </View>
-
-          <View className="w-2/12 flex flex-col space-y-2">
-            <View className="mx-auto">
-              <Text className="font-bold">Cantidad</Text>
-            </View>
-
-            <View className="mx-auto">
-              <Text>{totalProducts}</Text>
-            </View>
-          </View>
-
-          <View className="w-3/12 flex flex-col space-y-2">
-            <View className="mx-auto">
-              <Text className="font-bold">Estado</Text>
-            </View>
-
-            <View className="mx-auto">
-              <Text className="px-2 rounded-md bg-primary text-foreground">{status}</Text>
+              <View className="mx-auto">
+                <Text>{totalProducts}</Text>
+              </View>
             </View>
           </View>
         </View>
