@@ -73,7 +73,7 @@ function Cart() {
           </View>
         </View>
       ) : (
-        <View className="py-1">
+        <View>
           <FlatList
             style={{ marginBottom: 60 }}
             data={cart}
@@ -161,7 +161,7 @@ function Cart() {
                   </View>
                 </View> */}
 
-                <View className="mb-4 bg-gray-200 space-y-2 p-2">
+                <View className="mb-10 bg-gray-200 space-y-2 p-2">
                   <View className="w-full flex flex-row justify-between">
                     <Text className="text-copy-lighter text-base">
                       {lang.items}
