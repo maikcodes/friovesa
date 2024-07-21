@@ -14,7 +14,7 @@ export default function CategoryCardSkeleton() {
           </View>
 
           <View className="flex flex-row justify-center">
-            <View className="h-3 w-4/5 overflow-hidden rounded-sm">
+            <View className="h-3 w-4/5 md:w-2/5 overflow-hidden rounded-sm">
               <Shimmer />
             </View>
           </View>
