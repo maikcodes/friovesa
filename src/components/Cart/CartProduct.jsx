@@ -18,10 +18,10 @@ export default function CartProduct({
   return (
     <View className="flex flex-col space-y-2 mx-1">
       <View className="flex-row justify-between">
-        <View className="w-1/12 my-auto ml-1">
+        <View className="w-1/12 my-auto flex flex-row justify-center">
           <TouchableOpacity onPress={() => handleRemoveFromCart(id)}>
             <Image
-              className="w-6 h-6"
+              className="w-6 h-6 md:w-8 md:h-8"
               source={removeIcon}
               style={{
                 tintColor: APP_COLORS.copyDarkLighter,
@@ -30,8 +30,8 @@ export default function CartProduct({
           </TouchableOpacity>
         </View>
 
-        <View className="w-4/12">
-          <View className="h-24 w-full rounded-md overflow-hidden">
+        <View className="w-4/12 md:w-3/12">
+          <View className="h-24 md:h-40 w-full rounded-md overflow-hidden">
             <Image
               source={{ uri: imageUrl }}
               className="h-full w-full object-cover"
@@ -39,7 +39,7 @@ export default function CartProduct({
           </View>
         </View>
 
-        <View className="w-6/12 flex flex-col space-y-1">
+        <View className="w-6/12 md:w-7/12 flex flex-col space-y-1">
           <Text numberOfLines={2} ellipsizeMode="tail">
             {name}
           </Text>

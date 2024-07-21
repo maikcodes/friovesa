@@ -27,7 +27,7 @@ export default function ProductDetailsScreen({ productData }) {
   return (
     <CustomSafeAreaView>
       <ScrollView className="space-y-5" showsVerticalScrollIndicator={false}>
-        <View className="w-full h-72 ">
+        <View className="w-full h-72 md:h-[500px]">
           <Image
             source={{ uri: imageUrl }}
             style={{
@@ -38,7 +38,7 @@ export default function ProductDetailsScreen({ productData }) {
         </View>
 
         <ListContainer>
-          <View className="px-4 space-y-5">
+          <View className="px-4 space-y-5 pt-4">
             <View>
               <Text className="text-xl font-bold">{name}</Text>
 

@@ -14,7 +14,7 @@ export default function TouchableSettings({
   return (
     <TouchableOpacity onPress={handlePress}>
       <View className="flex flex-row">
-        <View className="w-2/12 flex flex-row items-center">
+        <View className="w-2/12 md:w-1/12 flex flex-row items-center">
           <View className="w-10 h-10 p-2">
             <Image
               source={icon}
@@ -27,7 +27,7 @@ export default function TouchableSettings({
           </View>
         </View>
 
-        <View className="w-10/12 pl-2">
+        <View className="w-10/12 md:w-11/12 pl-2">
           <TouchableSettingsSeparator />
           <View className="flex flex-row py-1 justify-between">
             <View className="flex flex-col justify-center ">

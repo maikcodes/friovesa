@@ -44,7 +44,7 @@ function Cart() {
           <Text className="text-xl">{lang.myCart}</Text>
         </View>
 
-        <View className="w-6/12">
+        <View className="w-6/12 md:w-5/12">
           <ControlButtonSuccess
             title={lang.checkout}
             handlePress={handleCheckout}
@@ -161,7 +161,7 @@ function Cart() {
                   </View>
                 </View> */}
 
-                <View className="mb-10 bg-gray-200 space-y-2 p-2">
+                <View className="mb-10 bg-gray-200 space-y-2 p-2 md:p-4">
                   <View className="w-full flex flex-row justify-between">
                     <Text className="text-copy-lighter text-base">
                       {lang.items}
