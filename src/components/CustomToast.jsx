@@ -9,6 +9,7 @@ const toastConfig = {
         backgroundColor: APP_COLORS.secondary,
         borderLeftColor: APP_COLORS.secondary,
         height: 90,
+        width: "98%",
       }}
       text1Style={{
         fontSize: 16,
@@ -31,6 +32,7 @@ const toastConfig = {
         backgroundColor: APP_COLORS.outOfStock,
         borderLeftColor: APP_COLORS.outOfStock,
         height: 90,
+        width: "98%",
       }}
       text1Style={{
         fontSize: 16,
@@ -49,5 +51,5 @@ const toastConfig = {
 };
 
 export default function CustomToast() {
-  return <Toast config={toastConfig}  />;
+  return <Toast config={toastConfig} />;
 }

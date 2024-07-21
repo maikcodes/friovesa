@@ -77,7 +77,12 @@ function ProductCartControl({ maxQuantity, product }) {
               className="w-full"
               onPress={() => onProductSelect(product.id)}
             >
-              <Text className="text-xs text-center font-bold md:text-md">{quantity}</Text>
+              <Text
+                className="text-xs text-center font-bold md:text-md"
+                numberOfLines={2}
+              >
+                {quantity}
+              </Text>
             </Pressable>
           </View>
 
