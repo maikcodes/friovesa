@@ -17,7 +17,7 @@ export class Order {
         per_page: perPage,
         orderBy: orderBy,
       });
-      console.log(url);
+      
       const response = await fetch(url);
       const responseJson = await response.json();
 

@@ -23,13 +23,16 @@ import { View, Text, ScrollView, Image, TouchableOpacity } from "react-native";
 import CustomModal from "../../../../src/components/CustomModal";
 import lang from "../../../../src/lang/es";
 import useAuth from "../../../../src/hooks/useAuth";
+import useCart from "../../../../src/hooks/useCart";
 
 export default function index() {
   const { onLogout, user } = useAuth();
   const [openModal, setOpenModal] = useState(false);
+  const { clearCart } = useCart();
 
   const handleLogout = async () => {
     await onLogout();
+    clearCart()
     router.replace("(auth)/login");
   };
 
@@ -78,7 +81,7 @@ export default function index() {
 
             <TouchableOpacity onPress={handleOpenLogoutModal}>
               <View className="flex flex-row">
-                <View className="w-2/12 flex flex-row items-center">
+                <View className="w-2/12 md:w-1/12 flex flex-row items-center">
                   <View className="w-10 h-10 p-2">
                     <Image
                       source={exitIcon}
@@ -91,7 +94,7 @@ export default function index() {
                   </View>
                 </View>
 
-                <View className="w-10/12 pl-2">
+                <View className="w-10/12 md:w-11/12 pl-2">
                   <View className="flex flex-row py-1 justify-between">
                     <View className="flex flex-col justify-center ">
                       <Text className="text-base">{lang.closeSession}</Text>
@@ -156,15 +159,15 @@ export default function index() {
             <Text className="text-lg font-bold">{lang?.areYouSureLogout}</Text>
           </View>
 
-          <View className="space-y-2">
-            <View>
+          <View className="md:flex md:flex-row-reverse">
+            <View className="md:w-6/12 md:pl-2">
               <ControlButtonSuccess
                 title={lang?.logout}
                 handlePress={handleLogout}
               />
             </View>
 
-            <View>
+            <View className="md:w-6/12 md:pr-2 pt-2 md:pt-0">
               <ControlButtonCancel
                 title={lang?.cancel}
                 handlePress={handleCloseLogoutModal}

@@ -118,15 +118,15 @@ function Cart() {
                       </Text>
                     </View>
 
-                    <View className="space-y-2">
-                      <View>
+                    <View className="md:flex md:flex-row-reverse">
+                      <View className="md:w-6/12 md:pl-2">
                         <ControlButtonSuccess
                           title={lang?.clearCart}
                           handlePress={handleClearCart}
                         />
                       </View>
 
-                      <View>
+                      <View className="md:w-6/12 md:pr-2 pt-2 md:pt-0">
                         <ControlButtonCancel
                           title={lang?.cancel}
                           handlePress={handleCancel}

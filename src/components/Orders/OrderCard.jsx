@@ -29,7 +29,7 @@ export default function OrderCard({ order }) {
       <TouchableOpacity className="p-3" onPress={handleSelectOrder}>
         <View className="space-y-2">
           <View className="flex flex-row">
-            <View className="w-3/12 h-20">
+            <View className="w-3/12 h-20 md:h-28">
               <Image
                 source={{ uri: imageUrl }}
                 className="h-full w-full object-cover"

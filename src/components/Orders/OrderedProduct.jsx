@@ -8,7 +8,7 @@ export default function OrderedProduct({ product }) {
     <View>
       <View className="flex flex-col space-y-2">
         <View className="flex-row justify-between">
-          <View className="w-3/12 h-20">
+          <View className="w-3/12 h-20 md:h-28">
             <Image
               source={{ uri: imageUrl }}
               className="h-full w-full object-cover"

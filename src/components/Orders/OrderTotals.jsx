@@ -13,7 +13,7 @@ export default function OrderTotals({ order }) {
   
   return (
     <View>
-      <View className="mb-4 space-y-1 bg-gray-200 rounded-md p-3">
+      <View className="mb-4 space-y-1 bg-gray-200 rounded-md p-3 md:p-4">
         <View className="w-full flex flex-wrap flex-row justify-between">
           <Text className="text-base">{lang?.paymentMethod}:</Text>
 

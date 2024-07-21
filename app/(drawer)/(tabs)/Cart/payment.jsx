@@ -102,15 +102,15 @@ export default function Payment({ handleBack, handleNext }) {
             </View>
           </View>
 
-          <View className="md:flex md:flex-row">
-            <View className="md:w-6/12 md:pr-2">
+          <View className="md:flex md:flex-row-reverse">
+            <View className="md:w-6/12 md:pl-2">
               <ControlButtonSuccess
                 title={lang?.continue}
                 handlePress={handleCreateOrder}
               />
             </View>
 
-            <View className="md:w-6/12 md:pl-2 pt-2 md:pt-0">
+            <View className="md:w-6/12 md:pr-2 pt-2 md:pt-0">
               <ControlButtonCancel
                 title={lang?.cancel}
                 handlePress={() => setOpenModal(false)}

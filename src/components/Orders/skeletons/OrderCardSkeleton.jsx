@@ -6,7 +6,7 @@ export default function OrderCardSkeleton() {
   return (
     <Card additionalStyles="p-3 space-y-2">
       <View className="flex flex-row">
-        <View className="w-3/12 h-20 rounded-sm overflow-hidden">
+        <View className="w-3/12 h-20 md:h-28 rounded-sm overflow-hidden">
           <Shimmer />
         </View>
 
@@ -45,7 +45,7 @@ export default function OrderCardSkeleton() {
         </View>
       </View>
 
-      <View className="bg-gray-100 flex flex-row justify-between px-1 rounded-md pt-1 pb-2">
+      <View className="bg-gray-100 flex flex-row justify-between px-1 rounded-md pt-1 pb-2 md:pt-2 mb:pb-3">
         <View className="w-4/12 flex flex-col space-y-3">
           <View className="w-7/12 h-3 rounded-sm overflow-hidden mx-auto">
             <Shimmer />
