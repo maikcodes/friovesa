@@ -29,13 +29,13 @@ export default function Home() {
           />
 
           <View className="flex flex-col space-y-2 mb-5">
-            <Text className="text-primary font-bold text-xl text-center">
+            <Text className="text-primary font-bold text-xl text-center md:text-2xl">
               {lang.selectYourCity}
             </Text>
 
             <View className="w-full">
               <View className="flex flex-row justify-center">
-                <View className="w-1/2 pr-3">
+                <View className="w-1/2 pr-3 md:pr-6">
                   <TouchableCity
                     cityTitle={lang.uioCity}
                     cityIcon={uioIcon}
@@ -43,7 +43,7 @@ export default function Home() {
                   />
                 </View>
 
-                <View className="w-1/2 pl-3">
+                <View className="w-1/2 pl-3 md:pl-6">
                   <TouchableCity
                     cityTitle={lang.gyeCity}
                     cityIcon={gyeIcon}
