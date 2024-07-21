@@ -40,7 +40,6 @@ export function CheckoutProvider({ children }) {
 
   useEffect(() => {
     const prepareAddress = async () => {
-      console.log("prepareAddress");
       const storedAddress = await PlainStorage.getValueByKey("address");
       const storedAddressParsed = JSON.parse(storedAddress);
       if (storedAddressParsed) {
