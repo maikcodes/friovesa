@@ -4,11 +4,11 @@ import Shimmer from "../../Shimmer";
 
 export default function CategoryCardSkeleton() {
   return (
-    <Card additionalStyles="h-36">
+    <Card additionalStyles="h-36 md:h-48">
       <View className="h-full w-full">
         <View className="p-2 flex flex-col justify-center items-center space-y-2 h-full w-full">
           <View className="mx-auto">
-            <View className="h-20 w-20 overflow-hidden rounded-full">
+            <View className="h-20 w-20 md:w-28 md:h-28 overflow-hidden rounded-full">
               <Shimmer />
             </View>
           </View>

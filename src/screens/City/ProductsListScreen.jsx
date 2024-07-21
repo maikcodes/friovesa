@@ -10,22 +10,37 @@ import {
   ListContainer,
   NoResults,
 } from "../../components";
-import { FlatList, RefreshControl, View } from "react-native";
+import {
+  FlatList,
+  RefreshControl,
+  View,
+  useWindowDimensions,
+} from "react-native";
 import { ProductCard, ProductsListSkeleton } from "../../components/Products";
 import { usePathname } from "expo-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import lang from "../../lang/es";
 import useProducts from "../../hooks/useProducts";
 
 export default function ProductsListScreen({ categoryId, parentId }) {
+  const { width } = useWindowDimensions();
+  const [columns, setColumns] = useState(2);
   const [isRefreshing, setIsRefreshing] = useState(false);
   const { isLoading, isError, products, refetch, fetchNextPage, hasNextPage } =
     useProducts({
       category: categoryId,
-      perPage: API.PRODUCTS.RESULTS_PER_PAGE,
+      perPage: width > 768 ? 12 : API.PRODUCTS.RESULTS_PER_PAGE,
       orderBy: "include",
     });
   const pathname = usePathname();
+
+  useEffect(() => {
+    const changeColumns = () => {
+      setColumns(width > 768 ? 3 : 2);
+    };
+
+    changeColumns();
+  }, []);
 
   const getProductsCityPath = () => {
     const pathArray = pathname.split("/");
@@ -89,14 +104,14 @@ export default function ProductsListScreen({ categoryId, parentId }) {
       <FlatList
         data={products}
         renderItem={({ item }) => (
-          <View className="w-1/2">
+          <View className="w-1/2 md:w-4/12">
             <ProductCard product={item} />
           </View>
         )}
         keyExtractor={(item) => item.id.toString()}
         onEndReached={hasNextPage ? fetchNextPage : null}
         onEndReachedThreshold={0.95}
-        numColumns={2}
+        numColumns={columns}
         ListHeaderComponent={
           <CategoriesScrollableMenu
             parentId={parentId}

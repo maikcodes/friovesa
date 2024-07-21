@@ -10,7 +10,7 @@ export default function ProductsListSkeleton() {
     <ScrollView>
       <View className="flex flex-row flex-wrap">
         {products.map((product) => (
-          <View key={product.id} className="w-1/2">
+          <View key={product.id} className="w-1/2 md:w-4/12">
             <ProductCardSkeleton />
           </View>
         ))}

@@ -4,9 +4,9 @@ import Card from "../../Card";
 
 export default function ProductCardSkeleton() {
   return (
-    <Card additionalStyles="h-48">
+    <Card additionalStyles="h-48 md:h-60">
       <View className="h-full w-full">
-        <View className="h-28 w-full rounded-t-md overflow-hidden">
+        <View className="h-28 md:h-36 w-full rounded-t-md overflow-hidden">
           <Shimmer />
         </View>
 

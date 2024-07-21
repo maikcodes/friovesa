@@ -59,7 +59,7 @@ function ProductCartControl({ maxQuantity, product }) {
         >
           {isSelected(product.id) && (
             <Pressable onPress={handlePressRemoveFromCart}>
-              <View className="w-9 h-9 p-2">
+              <View className="w-9 h-9 md:w-12 md:h-12 p-2 ">
                 <Image
                   source={minusIcon}
                   style={{
@@ -72,18 +72,18 @@ function ProductCartControl({ maxQuantity, product }) {
             </Pressable>
           )}
 
-          <View className="px-1 h-9 w-9 flex flex-row items-center">
+          <View className="px-1 w-9 h-9 md:w-12 md:h-12 flex flex-row items-center">
             <Pressable
               className="w-full"
               onPress={() => onProductSelect(product.id)}
             >
-              <Text className="text-xs text-center font-bold">{quantity}</Text>
+              <Text className="text-xs text-center font-bold md:text-md">{quantity}</Text>
             </Pressable>
           </View>
 
           {isSelected(product.id) && (
             <Pressable onPress={handlePressAddToCart}>
-              <View className="w-9 h-9 p-2">
+              <View className="w-9 h-9 md:w-12 md:h-12 p-2">
                 <Image
                   source={plusIcon}
                   style={{
@@ -98,7 +98,7 @@ function ProductCartControl({ maxQuantity, product }) {
         </Pressable>
       ) : (
         <Pressable onPress={handlePressAddToCart}>
-          <View className="w-9 h-9 p-2 bg-secondary rounded-lg shadow-md shadow-black border border-secondary">
+          <View className="w-9 h-9 md:w-12 md:h-12 p-2 bg-secondary rounded-lg shadow-md shadow-black border border-secondary">
             <Image
               source={plusIcon}
               style={{

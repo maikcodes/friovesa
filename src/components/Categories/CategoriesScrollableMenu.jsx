@@ -35,14 +35,14 @@ function CategoriesScrollableMenu({ parentId, path }) {
 
   return (
     <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-      <View className="flex flex-row space-x-5 p-2 h-20">
+      <View className="flex flex-row space-x-5 p-2 h-20 md:h-32">
         {categories?.map((category) => (
           <View key={category.id}>
             <TouchableOpacity
               onPress={() => handlePress(category.id)}
-              className="flex flex-col space-y-1 items-center bg-gray-50 py-1 px-2 rounded-md shadow-sm shadow-black"
+              className="flex flex-col space-y-1 items-center bg-gray-50 py-1 px-2 md:py-2 md:px-4 rounded-md shadow-sm shadow-black"
             >
-              <View className="h-10 w-10 rounded-full">
+              <View className="h-10 w-10 md:h-16 md:w-16 rounded-full">
                 <Image
                   source={{ uri: category.imageUrl }}
                   style={{

@@ -36,9 +36,9 @@ function ProductCard({ product, showButton = true }) {
   if (product?.price == 0) return null;
 
   return (
-    <Card additionalStyles="h-48">
+    <Card additionalStyles="h-48 md:h-60">
       <Pressable className="h-full w-full" onPress={handlePress}>
-        <View className="h-28 w-full rounded-t-md overflow-hidden">
+        <View className="h-28 md:h-36 w-full rounded-t-md overflow-hidden">
           <Image
             source={{ uri: product?.imageUrl }}
             className="h-full w-full object-cover"
