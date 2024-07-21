@@ -31,7 +31,7 @@ export default function CartProduct({
         </View>
 
         <View className="w-4/12 md:w-3/12">
-          <View className="h-24 md:h-40 w-full rounded-md overflow-hidden">
+          <View className="h-24 md:h-36 w-full rounded-md overflow-hidden">
             <Image
               source={{ uri: imageUrl }}
               className="h-full w-full object-cover"

@@ -8,8 +8,8 @@ export default function CartCheckoutProduct({ product }) {
   return (
     <View className="flex flex-col space-y-2 mx-1">
       <View className="flex-row justify-between">
-        <View className="w-4/12">
-          <View className="h-24 w-full rounded-md overflow-hidden">
+        <View className="w-4/12 md:w-3/12">
+          <View className="h-24 md:h-36 w-full rounded-md overflow-hidden">
             <Image
               source={{ uri: imageUrl }}
               className="h-full w-full object-cover"
@@ -17,7 +17,7 @@ export default function CartCheckoutProduct({ product }) {
           </View>
         </View>
 
-        <View className="w-6/12 flex flex-col space-y-1">
+        <View className="w-7/12 flex flex-col space-y-1">
           <Text numberOfLines={2} ellipsizeMode="tail">
             {name}
           </Text>

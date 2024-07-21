@@ -82,38 +82,46 @@ export default function checkout() {
 
   return (
     <CustomSafeAreaView>
-      <View className="flex flex-row justify-between p-2 mb-2">
-        <CheckoutStatus
-          title={lang?.address}
-          isChecked={checkoutIndex >= 0}
-          index={0}
-          handleMove={handleMove}
-          isVisited={checkoutState[0]?.visited}
-        />
+      <View className="flex flex-row justify-between md:justify-center p-2 mb-2">
+        <View>
+          <CheckoutStatus
+            title={lang?.address}
+            isChecked={checkoutIndex >= 0}
+            index={0}
+            handleMove={handleMove}
+            isVisited={checkoutState[0]?.visited}
+          />
+        </View>
 
-        <CheckoutStatus
-          title={lang?.shipping}
-          isChecked={checkoutIndex >= 1}
-          index={1}
-          handleMove={handleMove}
-          isVisited={checkoutState[1]?.visited}
-        />
+        <View className="md:ml-5">
+          <CheckoutStatus
+            title={lang?.shipping}
+            isChecked={checkoutIndex >= 1}
+            index={1}
+            handleMove={handleMove}
+            isVisited={checkoutState[1]?.visited}
+          />
+        </View>
 
-        <CheckoutStatus
-          title={lang?.preview}
-          isChecked={checkoutIndex >= 2}
-          index={2}
-          handleMove={handleMove}
-          isVisited={checkoutState[2]?.visited}
-        />
+        <View className="md:ml-5">
+          <CheckoutStatus
+            title={lang?.preview}
+            isChecked={checkoutIndex >= 2}
+            index={2}
+            handleMove={handleMove}
+            isVisited={checkoutState[2]?.visited}
+          />
+        </View>
 
-        <CheckoutStatus
-          title={lang?.payment}
-          isChecked={checkoutIndex >= 3}
-          index={3}
-          handleMove={handleMove}
-          isVisited={checkoutState[3]?.visited}
-        />
+        <View className="md:ml-5">
+          <CheckoutStatus
+            title={lang?.payment}
+            isChecked={checkoutIndex >= 3}
+            index={3}
+            handleMove={handleMove}
+            isVisited={checkoutState[3]?.visited}
+          />
+        </View>
       </View>
 
       <ScrollView className="px-2">

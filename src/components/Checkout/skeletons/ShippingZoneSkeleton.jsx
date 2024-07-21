@@ -4,7 +4,7 @@ import Shimmer from "../../Shimmer/index";
 export default function ShippingZoneSkeleton() {
   return (
     <View className="flex flex-row py-5">
-      <View className="w-2/12 p-2 my-auto">
+      <View className="w-2/12 p-2 my-auto md:pl-5">
         <View className="w-5 h-5 rounded-full flex flex-row justify-center items-center overflow-hidden">
           <Shimmer />
         </View>

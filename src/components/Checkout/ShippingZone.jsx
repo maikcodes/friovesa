@@ -8,7 +8,7 @@ export default function ShippingZone({ zone, onPress, isSelected }) {
 
   return (
     <TouchableOpacity className="flex flex-row py-4" onPress={handlePress}>
-      <View className="w-2/12 p-2 my-auto">
+      <View className="w-2/12 p-2 my-auto md:pl-5">
         <View className="w-5 h-5 border border-gray-500 p-1 rounded-full flex flex-row justify-center items-center">
           {isSelected && <View className="w-3 h-3 bg-primary rounded-full" />}
         </View>
