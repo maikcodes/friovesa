@@ -22,17 +22,19 @@ export default function TextFormField({
           {title}
         </Text>
       )}
-      <TextInput
-        multiline={true}
-        numberOfLines={2}
-        maxLength={200}
-        placeholder={placeholder}
-        onFocus={handleActive}
-        onBlur={() => setIsActive(false)}
-        value={value}
-        onChangeText={handleChangeText}
-        className="p-1 border-2 border-border focus:border-green-600 text-base rounded-md"
-      />
+      <View className="px-2 border-2 border-border focus:border-green-600 rounded-md">
+        <TextInput
+          multiline={true}
+          numberOfLines={2}
+          maxLength={200}
+          placeholder={placeholder}
+          onFocus={handleActive}
+          onBlur={() => setIsActive(false)}
+          value={value}
+          onChangeText={handleChangeText}
+          className="text-base"
+        />
+      </View>
     </View>
   );
 }
