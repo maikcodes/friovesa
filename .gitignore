@@ -2,6 +2,10 @@
 .env
 .vscode
 
+# Keys and certificates
+credentials.json
+android/keystores/
+
 # dependencies
 node_modules/
 

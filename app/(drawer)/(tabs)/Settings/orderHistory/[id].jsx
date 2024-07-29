@@ -58,13 +58,13 @@ export default function OrderHistory() {
 
             <View className="bg-gray-200 rounded-md p-3">
               <View className="flex flex-row justify-between">
-                <Text className="text-lg">{lang?.orderNumber}</Text>
+                <Text className="text-lg">{lang?.orderNumber}:</Text>
 
                 <Text className="text-lg font-bold"># {orderHistory?.id}</Text>
               </View>
 
               <View className="flex flex-row justify-between">
-                <Text className="text-lg">Estado:</Text>
+                <Text className="text-lg">{lang?.state}:</Text>
 
                 <Text className="text-lg font-bold">{orderHistory?.status}</Text>
               </View>
@@ -88,7 +88,7 @@ export default function OrderHistory() {
 
             <View className="pt-3">
               <ControlButtonSuccess
-                title="Volver al historial de pedido"
+                title={lang?.returnToOrdersHistory}
                 handlePress={handleReturnToOrdersHistory}
               />
             </View>

@@ -73,7 +73,7 @@ export default function OrderDetail() {
               <Text className="text-base font-bold">{lang?.orderSent}</Text>
 
               <View className="flex flex-row justify-between">
-                <Text className="text-lg">{lang?.orderNumber}</Text>
+                <Text className="text-lg">{lang?.orderNumber}:</Text>
 
                 <Text className="text-lg font-bold"># {createdOrder?.id}</Text>
               </View>

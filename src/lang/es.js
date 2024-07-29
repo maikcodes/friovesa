@@ -1,6 +1,6 @@
 export default {
   appName: "Fríovesa",
-  welcome: "¡Bienvenido a Fríovesa!",
+  welcome: "¡Bienvenido!",
 
   username: "Nombre de usuario",
   password: "Contraseña",
@@ -179,7 +179,8 @@ export default {
   failedBakingData:
     "Parece que ha ocurrido un error al cargar nuestros datos bancarios, por favor revisa tu pedido en nuestro sitio web",
   orderSent: "Pedido enviado",
-  orderNumber: "Número de pedido:",
+  orderNumber: "Número de pedido",
+  returnToOrdersHistory: "Volver al historial de pedidos",
   ourBankingData: "Nuestros datos bancarios",
   oderDetails: "Detalles de la compra",
   paymentInstructions: "Instrucciones de pago",

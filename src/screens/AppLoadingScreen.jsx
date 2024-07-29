@@ -8,7 +8,7 @@ export default function AppLoadingScreen() {
   return (
     <CustomSafeAreaView>
       <View className="flex flex-col items-center justify-center h-full">
-        <View className="w-36 h-36">
+        <View className="h-24 w-24 md:w-36 md:h-36">
           <Image
             source={appIcon}
             style={{

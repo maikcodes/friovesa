@@ -24,8 +24,8 @@ export default function Login() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const [form, setForm] = useState({
-    email: "",
-    password: "",
+    email: "friovesa_external_test",
+    password: "tXV#Ye&t@*4S4Cfp",
   });
 
   const handleLoginWithEmailAndPassword = async () => {
